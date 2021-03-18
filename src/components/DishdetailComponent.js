@@ -48,10 +48,10 @@ import { Card, CardImg, CardText, CardBody,
                 <div className="container">
                     <div className="row">
                         <div className="col-12 col-md-5 m-1">
-                            {RenderDish(props.dish)}
+                            <RenderDish dish={props.dish} />
                         </div>
                         <div className="col-12 col-md-5 m-1">
-                            {RenderComments(this.props.dish.comments)}
+                            <RenderComments comments={props.dish.comments} />
                         </div>
                     </div>
                 </div>    
