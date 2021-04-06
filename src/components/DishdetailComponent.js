@@ -26,20 +26,6 @@ import { FadeTransform, Fade, Stagger } from 'react-animation-components';
       }
 
     function RenderComments({comments, postComment, dishId}) {
-        const comment = comments.map((comment) => {
-            return (
-                <li>
-                    <p>{comment.comment}</p>
-                    <p>-- {comment.author}, 
-                        &nbsp;
-                        {new Intl.DateTimeFormat('en-US', 
-                        { year: 'numeric', 
-                        month: 'short', 
-                        day: '2-digit'}).format(new Date(Date.parse(comment.date)))}
-                    </p>
-                </li>
-            )
-        })
 
         return(
             <div>
@@ -49,10 +35,10 @@ import { FadeTransform, Fade, Stagger } from 'react-animation-components';
                         {comments.map((comment) => {
                             return (
                                 <Fade in>
-                                <li key={comment.id}>
-                                <p>{comment.comment}</p>
-                                <p>-- {comment.author} , {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date)))}</p>
-                                </li>
+                                    <li key={comment.id}>
+                                        <p>{comment.comment}</p>
+                                        <p>-- {comment.author} , {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date)))}</p>
+                                    </li>
                                 </Fade>
                             );
                         })}
